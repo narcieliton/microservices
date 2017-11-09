@@ -13,7 +13,9 @@ public class AlunosResource {
             MediaType.APPLICATION_JSON_VALUE
     })
     public String listarTodosAlunos(){
-        return "lista de alunos";
+        return "teste microservice aluno";
     }
+
+
 
 }
