@@ -2,6 +2,7 @@ package com.narcielitonlopes.professor.document;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -17,6 +18,9 @@ public class Professor{
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataNascimento;
     private String email;
+
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    private String idDisciplina;
 
     public String getId() {
     	return id;
@@ -48,5 +52,13 @@ public class Professor{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getIdDisciplina() {
+        return idDisciplina;
+    }
+
+    public void setIdDisciplina(String idDisciplina) {
+        this.idDisciplina = idDisciplina;
     }
 }

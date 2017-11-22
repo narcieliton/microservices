@@ -55,7 +55,7 @@ public class DisciplinasServiceImpl implements DisciplinaService {
 	@Override
 	public Disciplina consultarPorProfessor(String idProfessor) {
 
-		MongoOperations mongoOps = new MongoTemplate(new  SimpleMongoDbFactory(new Mongo(), "disciplina"));
+		MongoOperations mongoOps = new MongoTemplate(new Mongo(), "disciplina");
 		return  mongoOps.findOne(Query.query(Criteria.where("idProfessor").is(idProfessor)), Disciplina.class);
 	}
 
